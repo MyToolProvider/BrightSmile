@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<title>Book Visit · BrightSmile Dental</title>
+</head>
+<body>
+<section class="page-hero"><canvas id="page-canvas"></canvas>
+<div class="hero-content">
+  <span class="eyebrow reveal">Appointments</span>
+  <h1 class="reveal reveal-delay-1">Book your <span class="gradient-text">visit.</span></h1>
+  <p class="lead reveal reveal-delay-2">Choose a time that suits you. We'll confirm by phone or email within one working day.</p>
+</div></section>
+<section>
+  <div class="card reveal" style="max-width:820px;margin:0 auto">
+    <form id="bookForm">
+      <div class="form-row"><input type="text" placeholder="Full name" required><input type="tel" placeholder="Phone number" required></div>
+      <div class="form-row"><input type="email" placeholder="Email address" required><input type="date" required></div>
+      <div class="form-row">
+        <select required><option value="">Visit type</option><option>Check-up & clean</option><option>Cosmetic consultation</option><option>Emergency</option><option>Implant consultation</option><option>Child visit</option></select>
+        <select><option>Preferred time: Morning</option><option>Afternoon</option><option>Evening</option></select>
+      </div>
+      <textarea placeholder="Tell us about any pain, concerns or medications"></textarea>
+      <button class="btn btn-primary" type="submit" style="justify-self:start">Request appointment →</button>
+    </form>
+  </div>
+</section>
+<script>
+document.getElementById("bookForm").addEventListener("submit", (e) => {
+  e.preventDefault(); window.toast("Request received. We'll confirm shortly."); e.target.reset();
+});
+</script>
+<script src="main.js"></script>
+</body>
+</html>
